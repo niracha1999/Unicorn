@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript">
+        // Background Sound Play/Pause Script:
+        // Description: Background Music Will Be On Via Click And And Will Be Off On Other Click With Image Change Also By Pure JavaScript.
+        // Copyright EXEIdeas International 2013. All Right Reserved.
+        function playpause() { var snd = document.getElementById("sound"); var snd_btn = document.getElementById("sound_button"); snd.muted = !snd.muted; if (snd.muted) { snd_btn.innerHTML = "<img alt='Pause The Music' title='Music Paused' src='img/speaker.png' style='height: 16px'/>"; } else { snd_btn.innerHTML = "<img alt='Play The Music' title='Music Palying' src='img/speaker-2.png' style='height: 16px'/>"; } }
+    </script>
+    <audio autoplay="true" loop="true" width="0" height="0" id="sound" src="music/music1.mp3" type="audio/mp3"></audio>
+    <!-- <noembed><bgsound src="music.mp3" loop="infinite"/></noembed> -->
+
+    <div id='sound_button' onClick="playpause()"><img title='Music Playing' alt='Play The Music' src='img/speaker-2.png'
+            style='height: 16px' /></div>
+
+
+    <title>Find My Unicorns</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="http://pngimg.com/uploads/bomb/bomb_PNG41.png" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" widtd="divice-widtd">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-tdeme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Gugi|Kumar+One|Megrim|Righteous" rel="stylesheet">
+    <script src="style.js"></script>
+</head>
+
+<body style="background-color: black">
+    <!--Menu-->
+    <div class="container-fluid">
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="row">
+                               <p class="text-center" id="playerA">Player A</p>
+                            </div>
+                            <div class="row">
+                                <p class="text-center" id="labelA">0</p>
+                            </div>
+                        </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <h1 id="gameTitle">
+                        <img src="img/fauLOGO.png" alt="logo"></img>
+                    </h1>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="row">
+                           <p class="text-center" id="playerB">Player B</p>
+                       </div>
+                       <div class="row">
+                           <p class="text-center" id="labelB">0</p>
+                       </div>
+                   </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-md-offset-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <button type="button" class="btn btn-lg" id="restart" onclick="restart()">RESTART</button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <button type="button" class="btn btn-lg" id="start" onclick="start()">START</button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <button type="button" class="btn btn-lg" id="help">i</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-2 col-md-2 col-sm-2">
+
+                <div id="bubble" class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <p id="turnA">
+                                </p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <p id="timer">0</p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <p id="turnB" class="text-center"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <div>
+                                <p id="result" class="text-center">Please click start</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" id="tg">
+                            <table style="width: 100%">
+        
+                                <tr>
+                                    <td style="align-content: center">
+                                        <table>
+                                            <img id="default_field" src="img/default_field.png" style="width: 420px; height: 420px;" />
+                                        </table>
+                                        <table id="table" style="width: 420px; height: 420px;">
+        
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+
+                <div class="col-lg-3">
+                    <textarea id="chatArea" cols="30" rows="10" class="form-control">
+                        
+                    </textarea>
+                    <textarea id="message" class="form-control" placeholder="type here"></textarea>
+                    <br />
+                    <input type="submit" id="send" class="btn btn-primary" value="send" onclick="sendMessase()"/>
+                </div>
+                
+            </div>
+
+        
+        <section align="center" id="popup">
+            <!-- <p id="popuptext">text</p> -->
+            <!-- <button id="popupbutton" onclick="rt()">OK</button> -->
+        </section>
+        <section id="overlay"></section>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="popuptext">Some text in the Modal..</p>
+                <button id="popupbutton" onclick="nextRound()">OK</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--game script-->
+    <script src="gameScript.js"></script>
+    <link rel="stylesheet" type="type/css" href="style.css">
+
+
+</body>
+
+</html>

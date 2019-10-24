@@ -1,0 +1,243 @@
+/* @font-face{
+  src: url(font/Star_Jedi_Rounded.ttf);
+  font-family: 'Black Ops One', cursive;
+} */
+
+#gameTitle{
+  /* color: white;
+  border:2px solid white;
+  font:60px; */
+  text-align:center;
+  /* font-family: 'Megrim', cursive ;
+  font-weight:bold; */
+}
+
+#tg{
+  margin-left: 13.5cm;
+  margin-top: 0px;
+}
+
+#table {
+  margin-top: 20%;
+  text-align:center;
+}
+
+#header{
+  margin: auto;
+  width: 200px;
+}
+
+#restart {
+  width: 3.2cm;
+  height: 1.5cm;
+  text-align: center;
+  font-family: 'Black Ops One', cursive;
+  background: url('img/button.png');
+  background-size: 100%;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  padding-bottom: 10%;
+}
+
+#start {
+  width: 3.2cm;
+  height: 1.5cm;
+  text-align: center;
+  font-family: 'Black Ops One', cursive;
+  background: url('img/button.png');
+  background-size: 100%;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  padding-bottom: 10%;
+
+}
+
+#help {
+  width: 3.2cm;
+  height: 1.5cm;
+  text-align: center;
+  font-family: 'Black Ops One', cursive;
+  background: url('img/button.png');
+  background-size: 100%;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  padding-bottom: 10%;
+
+}
+
+#timer {
+
+  margin-left: 3mm;
+  margin-bottom: 10mm;
+  text-align: center;
+  font-size: 80px;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  color: #574d40;
+}
+
+#turnA {
+  padding-top: 10%;
+
+  text-align: left;
+  font-size: 40px;
+  /* color: blue;
+  font-family: 'Black Ops One', cursive; */
+  font-family: 'Gugi', cursive;
+  color:greenyellow;
+  padding-right: 50px;
+}
+
+#turnB {
+  padding-top: 10%;
+
+  text-align: right;
+  font-size: 40px;
+  /* color: blue;
+  font-family: 'Black Ops One', cursive; */
+  font-family: 'Gugi', cursive;
+  color:greenyellow;
+}
+#result {
+  margin-top: 0px;
+  margin-left: 10px;
+  font: size 13px;
+  font-family: 'Gugi', cursive;
+  color:rgb(195, 245, 195);
+}
+
+#bubble {
+  width: 3in;
+  height: 3in;
+  background: url('img/bubble.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 8%;
+}
+
+#tile {
+  background: url('img/tiles.png');
+  background-size: 100%;
+  /* background-color:#99b7e8; */
+  border:2px solid black;
+  width:70px;
+  height:70px;
+  /* color:red; */
+  font-size:30px;
+  text-align:center;
+  /* onmouseenter:inset 0px 0px 20px 10px #99b7e8; */
+}
+
+#labelA {
+  font-family: 'Black Ops One', cursive;
+  font-size: 200px;
+  color: white;
+}
+
+#labelB {
+  font-family: 'Black Ops One', cursive;
+  font-size: 200px;
+  color: white;
+}
+
+#playerA {
+  font-family: 'Black Ops One', cursive;
+  font-size: 28px;
+  color: white; 
+  /* font-weight: bold; */
+  /* align-self: center; */
+}
+
+#playerB {
+  font-family: 'Black Ops One', cursive;
+  font-size: 28px; 
+  color: white;
+  /* font-weight: bold; */
+  /* align-self: center; */
+}
+  #popup {
+    z-index:5;
+    position:fixed;
+    left:25%;
+    top:40%;
+    width:50%;
+    height: 20%;
+    padding:5px;
+    visibility:hidden;
+    background-color:#ffffff;
+    color:#555555;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+  }
+  #popupbutton {
+    align-self: center;
+    width:100%;
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    color: #dbcd36;
+    background-color: #000000;
+    }
+    
+  #popuptext {  
+    color: #dbcd36;
+    font-family: 'Black Ops One', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #overlay {
+    z-index: 1;
+     position:fixed;
+     top:0px;
+     left:0px;
+     width:100%;
+     height:100%;
+     background-color:#000000;
+     opacity:0.5;
+     visibility:hidden;
+  }
+
+  body{
+    /* opacity: 1.0; */
+    background: url('img/pinkskyBG.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* overflow:hidden;  */
+  }
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /*Black w/ opacity*/
+}
+
+/* Modal Content/Box */
+.modal-content {
+background: url(img/textureModal.jpg);
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
